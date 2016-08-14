@@ -1,19 +1,20 @@
 # geojson-events
-Extending GeoJSON with event-like features
+Extending [RFC 7649](https://tools.ietf.org/html/rfc7946) GeoJSON with
+event-like features
 
-## Proposal in a nutshell
+## In a nutshell
 
-- A "when" object analogous to GeoJSON's existing "geometry".
-- The values of items in "when" are ISO-8601 or RFC 3339 date/time strings.
-- The keys of those items are "instantTime", "startTime", "endTime".
-- A "circa" object with the same structure as "when" can be used to communicate
-  fuzziness or imprecision.
+- Defines a "when" member analogous to GeoJSON's existing "geometry".
+- Defines two types of temporal objects: "Instant" and "Interval".
+- Values of these objects are ISO-8601 or RFC 3339 date/time strings.
 
-## Instantaneous event-like feature
+## Examples
+
+### Instantaneous event-like feature
 
 For a thing that exists at a certain time.
 
-```
+```json
 {
   "geometry": {
     "coordinates": [
@@ -26,16 +27,17 @@ For a thing that exists at a certain time.
   "properties": {"foo": "bar"},
   "type": "Feature",
   "when": {
-    "instantTime": "2014-04-24"
+    "at": "2014-04-24",
+    "type": "Instant"
   }
 }
 ```
 
-## Non-instaneous event-like feature
+### Non-instaneous event-like feature
 
 For a thing that exists during a certain interval.
 
-```
+```json
 {
   "geometry": {
     "coordinates": [
@@ -48,17 +50,18 @@ For a thing that exists during a certain interval.
   "properties": {"foo": "bar"},
   "type": "Feature",
   "when": {
-    "startTime": "2014-04-24",
-    "endTime": "2014-04-25",
+    "start": "2014-04-24",
+    "end": "2014-04-25",
+    "type": "Interval"
   }
 }
 ```
 
-## Open-ended event-like feature
+### Open-ended event-like feature
 
 For a thing that exists *since* a certain time.
 
-```
+```json
 {
   "geometry": {
     "coordinates": [
@@ -71,59 +74,8 @@ For a thing that exists *since* a certain time.
   "properties": {"foo": "bar"},
   "type": "Feature",
   "when": {
-    "startTime": "2014-04-24"
-  }
-}
-```
-
-## Fuzzy instant
-
-For a thing that exists at a certain time with fuzzy bounds. Displaying such
-things is a feature of Simile's Timeline.
-
-```
-{
-  "geometry": {
-    "coordinates": [
-      0.0,
-      0.0
-    ],
-    "type": "Point"
-  },
-  "id": "1",
-  "properties": {"foo": "bar"},
-  "type": "Feature",
-  "circa": {
-    "startTime": "2014-04-23",
-    "endTime": "2014-04-25"
-  },
-  "when": {
-    "instantTime": "2014-04-24"
-  }
-}
-```
-
-## Open-ended interval with a fuzzy start
-
-For a thing that exists since an approximately known time.
-
-```
-{
-  "geometry": {
-    "coordinates": [
-      0.0,
-      0.0
-    ],
-    "type": "Point"
-  },
-  "id": "1",
-  "properties": {"foo": "bar"},
-  "type": "Feature",
-  "circa": {
-    "startTime": "2014-04-23"
-  },
-  "when": {
-    "startTime": "2014-04-24"
+    "type": "Interval",
+    "start": "2014-04-24"
   }
 }
 ```
