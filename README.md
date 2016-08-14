@@ -1,4 +1,5 @@
-# geojson-events
+# GeoJSON Events
+
 Extending [RFC 7649](https://tools.ietf.org/html/rfc7946) GeoJSON with
 event-like features
 
@@ -82,10 +83,11 @@ For a thing that exists *since* a certain time.
 
 ## Real world example
 
-The USGS publishes several GeoJSON feeds of recent earthquake data (see
-http://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php). These feeds
-record the time of earthquake events in a manner unique to these feeds (epoc
-milliseconds). Below is an example of the [Past 7 Days Significant
+The USGS publishes [GeoJSON feeds of recent earthquake
+data](http://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php). These
+feeds record the time of earthquake events in a manner unique to these feeds
+(milliseconds since the epoch). Below is an example of the [Past 7 Days
+Significant
 Earthquakes](http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/significant_week.geojson),
 retrieved 2016-08-14, converted to use geojson-events instants.
 
