@@ -1,13 +1,16 @@
-# GeoJSON Events
+# Instants and Intervals for event-like GeoJSON features
 
-Extending [RFC 7649](https://tools.ietf.org/html/rfc7946) GeoJSON with
-event-like features
+Extends [RFC 7649](https://tools.ietf.org/html/rfc7946) GeoJSON with
+instants and intervals of time
 
 ## In a nutshell
 
 - Defines a "when" member analogous to GeoJSON's existing "geometry".
 - Defines two types of temporal objects: "Instant" and "Interval".
 - Values of these objects are ISO-8601 or RFC 3339 date/time strings.
+
+The "when" object describes the temporal extent of a feature in the same sense
+that a GeoJSON "geometry" object describes its spatial extent.
 
 ## Hypothetical examples
 
