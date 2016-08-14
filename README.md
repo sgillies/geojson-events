@@ -10,7 +10,9 @@ instants and intervals of time
 - Values of these objects are ISO-8601 or RFC 3339 date/time strings.
 
 The "when" object describes the temporal extent of a feature in the same sense
-that a GeoJSON "geometry" object describes its spatial extent.
+that a GeoJSON "geometry" object describes its spatial extent. A common
+representation of time allows us to more readily mix GeoJSON from different
+sources in spatio-temporal visualizations.
 
 ## Hypothetical examples
 
