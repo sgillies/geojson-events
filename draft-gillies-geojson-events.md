@@ -38,8 +38,10 @@ TODO
 
 ## Intervals
 
-An interval MUST NOT have more than one "start" member or more than one "end"
-member.
+An interval MAY have either or both "start" and "end" members. Open-ended
+intervals (cosmological theories aside) can be represented by omitting either
+the "start" or the "end". An interval MUST NOT have more than one "start"
+member or more than one "end" member.
 
 TODO
 
