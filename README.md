@@ -33,7 +33,7 @@ For a thing that exists at a certain time.
   "properties": {"foo": "bar"},
   "type": "Feature",
   "when": {
-    "at": "2014-04-24",
+    "start": "2014-04-24",
     "type": "Instant"
   }
 }
@@ -111,7 +111,7 @@ retrieved 2016-08-14, converted to use geojson-events instants.
       }, 
       "when": {
         "type": "Instant", 
-        "at": "2016-08-12T01:26:35.140000+00:00"
+        "start": "2016-08-12T01:26:35.140000+00:00"
       }, 
       "type": "Feature", 
       "properties": {
@@ -155,7 +155,7 @@ retrieved 2016-08-14, converted to use geojson-events instants.
       }, 
       "when": {
         "type": "Instant", 
-        "at": "2016-08-10T02:57:17.510000+00:00"
+        "start": "2016-08-10T02:57:17.510000+00:00"
       }, 
       "type": "Feature", 
       "properties": {
