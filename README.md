@@ -3,6 +3,8 @@
 Extends [RFC 7649](https://tools.ietf.org/html/rfc7946) GeoJSON with
 instants and intervals of time
 
+Documentation and draft: [https://sgillies.github.io/geojson-events](https://sgillies.github.io/geojson-events)
+
 ## In a nutshell
 
 - Defines a "when" member analogous to GeoJSON's existing "geometry".
