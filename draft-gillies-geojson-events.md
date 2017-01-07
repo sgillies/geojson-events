@@ -6,9 +6,9 @@ title: draft-gillies-geojson-events
 draft-gillies-geojson-events
 ============================
 
-**Revision**: 00
+**Revision**: 01
 
-**Date**: 2017-01-04
+**Date**: 2017-01-07
 
 ## Abstract
 
