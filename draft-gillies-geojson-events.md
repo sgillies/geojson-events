@@ -65,7 +65,7 @@ The "when" object for an instantaneous feature has type "Instant" and a
 ```
 
 The "when" object for a feature of finite duration has type "Interval" and
-"start" and "stop" members.
+"start" and "end" members.
 
 ```json
 {
@@ -93,7 +93,7 @@ The "when" object for a feature of finite duration has type "Interval" and
 
 An instant is an object with a "start" member, the value of which is a [RFC
 3339](https://tools.ietf.org/html/rfc3339) date/time string, and a "type" of
-"Instant". An instant does not have a "stop" member.
+"Instant". An instant does not have a "end" member.
 
 ### Intervals
 
@@ -101,8 +101,11 @@ An interval is an object with either or both "start" and "end" members and
 a "type" of "Interval". Open-ended intervals (cosmological theories aside) can
 be represented by omitting either the "start" or the "end". An interval MUST
 NOT have more than one "start" member or more than one "end" member. As with
-instants, the values of "start" and "stop" are [RFC
-3339](https://tools.ietf.org/html/rfc3339) date/time strings.
+instants, the values of "start" and "end" are [RFC
+3339](https://tools.ietf.org/html/rfc3339) date/time strings. The "start" and
+"end" values are on the boundary of, but not within, the interval they define.
+In other words: two intervals are adjacent, but do not overlap, if the end
+of one and the start of the other coincide.
 
 ### "when"
 
